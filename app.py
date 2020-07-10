@@ -9,8 +9,8 @@ browser = webdriver.Firefox()
 browser.maximize_window()
 
 browser.get('http://www.facebook.com')
-email = ""
-pass_word = ""
+email = ""  # enter your email here
+pass_word = "" # enter your password here
 
 def locatelements():
     global user 
@@ -22,8 +22,6 @@ def locatelements():
         logbtn = browser.find_element_by_id('loginbutton')
     except NoSuchElementException:
         logbtn = browser.find_element_by_id("u_0_d")
-
-locatelements()
 
 def send_message():
     browser.get("https://www.facebook.com/events/birthdays/")
@@ -40,7 +38,7 @@ def send_message():
         action.send_keys(Keys.RETURN)
         action.perform()
         bd.location_once_scrolled_into_view
-        time.sleep(5)
+        time.sleep(3)
 
 def login(username,password):
     user.send_keys(username)
@@ -58,7 +56,9 @@ def check_login():
     else:
         send_message()
 
-login(email,pass_word)
-time.sleep(5)
-check_login()
+if __name__=="__main__":
+    locatelements()
+    login(email,pass_word)
+    time.sleep(4)
+    check_login()
     
