@@ -22,7 +22,7 @@ def locatelements():
         logbtn = browser.find_element_by_id('loginbutton')
     except NoSuchElementException:
         logbtn = browser.find_element_by_id("u_0_d")
-
+        
 def send_message():
     browser.get("https://www.facebook.com/events/birthdays/")
     time.sleep(5)
