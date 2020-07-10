@@ -8,8 +8,8 @@ browser = webdriver.Firefox()
 browser.maximize_window()
 
 browser.get('http://www.facebook.com')
-username = "omar.magdi@live.com"
-password = "Magno+123"
+username = ""
+password = ""
 
 
 
