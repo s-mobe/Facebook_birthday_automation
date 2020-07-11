@@ -18,7 +18,7 @@ def locatelements():
     global passw 
     passw = browser.find_element_by_id('pass')
     global logbtn
-    
+
     try:
         logbtn = browser.find_element_by_id('loginbutton')
     except NoSuchElementException:
@@ -36,7 +36,7 @@ def send_message():
         action = webdriver.ActionChains(browser)
         action.click(bd)
         action.send_keys("Happy Birthday, wish you an amazing year")
-        #action.send_keys(Keys.RETURN)
+        action.send_keys(Keys.RETURN)
         action.perform()
         bd.location_once_scrolled_into_view
         time.sleep(3)
