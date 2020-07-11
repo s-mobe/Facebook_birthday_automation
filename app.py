@@ -26,16 +26,16 @@ def locatelements():
 def send_message():
     browser.get("https://www.facebook.com/events/birthdays/")
     time.sleep(5)
-    bdlist = browser.find_elements_by_css_selector("._1mf")  # class="_1mf _1mj
+    bdlist = browser.find_elements_by_css_selector("form")  # tag = form or class="_1mf _1mj"
 
     if len(bdlist) == 0 :
-        print("couldnt fetch the class name properly, FB changed the class name")
+        print("couldnt fetch the class name properly.")
 
     for bd in bdlist:
         action = webdriver.ActionChains(browser)
         action.click(bd)
         action.send_keys("Happy Birthday, wish you an amazing year")
-        action.send_keys(Keys.RETURN)
+        #action.send_keys(Keys.RETURN)
         action.perform()
         bd.location_once_scrolled_into_view
         time.sleep(3)
