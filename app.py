@@ -18,6 +18,7 @@ def locatelements():
     global passw 
     passw = browser.find_element_by_id('pass')
     global logbtn
+    
     try:
         logbtn = browser.find_element_by_id('loginbutton')
     except NoSuchElementException:
