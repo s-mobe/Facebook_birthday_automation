@@ -34,7 +34,7 @@ def send_message():
     print(len(bd_list_name))
 
     if len(bdlist) == 0 :
-        print("couldnt fetch the class name properly") # try changing the class name as shown above 
+        print("couldnt fetch the class name properly") # try changing the class name as shown above if no birthdays in your list it will also return 0
 
     for bd in bdlist:
         i = 0
