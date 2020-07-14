@@ -36,8 +36,9 @@ def send_message():
     if len(bdlist) == 0 :
         print("couldnt fetch the class name properly") # try changing the class name as shown above if no birthdays in your list it will also return 0
 
+    i = 0
     for bd in bdlist:
-        i = 0
+        
         action = webdriver.ActionChains(browser)
         action.click(bd)
         action.send_keys("Happy Birthday "+ bd_list_name[i].text.split()[0] + ", wish you an amazing year")
@@ -45,7 +46,7 @@ def send_message():
         action.perform()
         bd.location_once_scrolled_into_view
         time.sleep(3)
-        i += 1
+        i +=1
 
 def login(username,password):
     user.send_keys(username)
